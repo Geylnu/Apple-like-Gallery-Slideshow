@@ -6,7 +6,6 @@ bindEvent()
 function setAutoplay(){
     return setInterval(()=>{
         $('.slideShow-wrapper>footer>ul>li').eq(1+n%4).trigger('click')
-        n++
     },time)
 }
 
@@ -14,6 +13,7 @@ function bindEvent(){
     $('.slideShow-wrapper>footer>ul>li').on('click',(e)=>{
         let index = $(e.currentTarget).index()
         if(index === 0) {return undefined}
+        n =index
         $('.slideShow-wrapper>footer>ul>li').removeClass('active')
         $(e.currentTarget).addClass('active')
         $('.slides').css(
