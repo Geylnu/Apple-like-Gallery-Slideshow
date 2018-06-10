@@ -23,6 +23,7 @@ function bindEvent(){
             )
     })
     
-    $('.slideShow-wrapper').on('mouseenter',()=>{window.clearInterval(id)})
-        .on('mouseleave',()=>{id=setAutoplay()})
+    let mouseEnter = false 
+    $('.slideShow-wrapper').on('mouseenter',()=>{window.clearInterval(id);mouseEnter=true })
+        .on('mouseleave',()=>{if(mouseEnter){id=setAutoplay()}})
 }
